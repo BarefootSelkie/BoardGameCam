@@ -1,12 +1,26 @@
 <html>
     <head>
         <script>
-            setTimeout(()=>location.reload(), 5000)
+            var buffer = 0;
+
+
+            function reloadImage()
+            {
+                var hidden = buffer;
+                buffer = buffer == 0 ? 1 : 0;
+
+                console.log("reloading " + buffer);
+                document.getElementById("image" + buffer).style.height = 768;
+                document.getElementById("image" + hidden).outerHTML = "<img style='height:0' src='./images/image.jpg?" + Math.random() + "' id='image" + hidden + "'></img>";
+                return true;
+            }
+            setInterval(reloadImage, 2000);
         </script>
     </head>
 
     <body>
-        <img src="./images/image.jpg"></img>
+        <img src="./images/image.jpg" id="image0"></img>
+        <img src="./images/image.jpg" id="image1" style="border: 1px solid red"></img>
     </body>
 
 </html>
