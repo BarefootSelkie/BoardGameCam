@@ -9,5 +9,6 @@ make a 777 folder called images
 
 ## Notes
 
-fswebcam -r 1920x1080 -S 2 images/image.jpg
 sudo mount -t tmpfs -o size=128m images ./images/
+fswebcam -r 1920x1080 -l 1 -S 100 images/image.jpg
+python -m SimpleHTTPServer

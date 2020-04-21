@@ -14,13 +14,13 @@
                 document.getElementById("image" + hidden).outerHTML = "<img style='height:0' src='./images/image.jpg?" + Math.random() + "' id='image" + hidden + "'></img>";
                 return true;
             }
-            setInterval(reloadImage, 2000);
+            setInterval(reloadImage, 5000);
         </script>
     </head>
 
     <body>
         <img src="./images/image.jpg" id="image0"></img>
-        <img src="./images/image.jpg" id="image1" style="border: 1px solid red"></img>
+        <img src="./images/image.jpg" id="image1"></img>
     </body>
 
 </html>
