@@ -1,5 +1,12 @@
 <html>
     <head>
+        <style>
+            img {
+                position: absolute;
+                height: 768;
+                display: block;
+            }
+        </style>
         <script>
             var buffer = 0;
 
@@ -10,11 +17,11 @@
                 buffer = buffer == 0 ? 1 : 0;
 
                 console.log("reloading " + buffer);
-                document.getElementById("image" + buffer).style.height = 768;
-                document.getElementById("image" + hidden).outerHTML = "<img style='height:0' src='./images/image.jpg?" + Math.random() + "' id='image" + hidden + "'></img>";
+                document.getElementById("image" + buffer).style.opacity = 1;
+                document.getElementById("image" + hidden).outerHTML = "<img style='opacity: 0' src='./images/image.jpg?" + Math.random() + "' id='image" + hidden + "'></img>";
                 return true;
             }
-            setInterval(reloadImage, 5000);
+            setInterval(reloadImage, 2000);
         </script>
     </head>
 
